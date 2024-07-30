@@ -1,0 +1,58 @@
+/* Apply background image to the entire viewport */
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('./test.jpg'); /* Replace with your image URL */
+    background-size: cover;
+    background-position: center;
+}
+
+/* Center the container div */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Style the button */
+.animated-button {
+    padding: 15px 30px;
+    font-size: 18px;
+    color: white;
+    background-color: #007BFF;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    outline: none;
+    position: relative;
+    overflow: hidden;
+    transition: background-color 0.3s ease;
+}
+
+/* Add animation to the button */
+.animated-button:hover {
+    background-color: #0056b3;
+}
+
+.animated-button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: rgba(255, 255, 255, 0.2);
+    transition: all 0.3s;
+    border-radius: 50%;
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.animated-button:hover::before {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(0);
+}
